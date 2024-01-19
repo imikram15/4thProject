@@ -1,0 +1,38 @@
+<form novalidate [formGroup]="testForm">
+    <div class=" container-fluid row">
+        <div class="col-xs-12 form-group marl40">
+            <div style="margin-top: 0px; ">
+                <div class="row panel-heading bold-text" style="text-align: center; font-weight: 900; margin-top: 20px;">
+                   <h1> Form Details</h1>
+                </div>
+               
+                <ng-container  *ngIf='items.controls !=null'>
+                    <div formArrayName="itemRows" *ngFor="let itemRow of items.controls; let i = index" >
+                        <div [formGroupName]="i" class="row">
+                            <div class="col-md-2 form-group">
+                                <input matInput placeholder="Name" formControlName="Name">
+                            </div>
+                            <div class="col-md-2 form-group">
+                                <input matInput placeholder="Roll No" formControlName="Rollno">
+                            </div>
+                            <div class="col-md-2 form-group">
+                                <input matInput placeholder="Class" formControlName="Class">
+                            </div>
+                            <div class="col-md-2 form-group">
+                                <input matInput placeholder="Mobile No" formControlName="Mobileno">
+                            </div>
+                            <div class="col-md-2 form-group">
+                                <button (click)="deleteRow(i)" class="btn btn-danger">X</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="form-group" style="text-align: right;">
+                    <button type="button" (click)="addNewRow()" [disabled]="testForm.invalid"
+                        class="btn btn-success">Add More</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</form>

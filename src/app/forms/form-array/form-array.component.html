@@ -1,0 +1,15 @@
+<form [formGroup]="form" (ngSubmit)="onsubmit()">
+    <h2 class="text-center" style="text-align: center; margin-top: 20px;">Registration Page</h2>
+    <div formArrayName="contactnos">
+      <div *ngFor="let contact of form.controls.contactnos.controls; index as i">
+      <input [formControlName]="i" placeholder="Contact No">
+      </div>
+    </div>
+    <br>
+    <button>Submit</button><br> <br> 
+    <button (click)="setpreset()">Set Preset</button> <br> <br>
+    <button (click)="addContactNo()">Add New Contact No</button> <br>
+    
+    <br>
+    </form>
+    

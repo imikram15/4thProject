@@ -1,0 +1,26 @@
+   <h1 style="text-align: center; font-weight: 900; margin-top: 20px;">Template Driven form</h1>
+   <div class="container">
+    <div class="row">
+      <div class="form-bg">
+        <form #regForm="ngForm" (ngSubmit)="Register(regForm)">
+        <h2 class="text-center">Registration Page</h2>
+        <br>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="First Name" name="firstname" ngModel>
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Last Name" name="lastname" ngModel>
+        </div>
+        <br>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Email ID" name="email" ngModel>
+        </div>
+        <br>
+        <div class="align-center">
+          <button type="submit" class="btn btn-success" id="regiter">Register</button>
+        </div>
+        </form>
+      </div>
+    </div>
+   </div>

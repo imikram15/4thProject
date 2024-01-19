@@ -1,0 +1,43 @@
+<h3 style="text-align: center; font-weight: 900; margin-top: 20px;">Template Driven Form</h3>
+<form  #userform="ngForm" (ngSubmit)="OnFormSubmit(userform)">
+<table >
+  <tr>
+    <td>Name:</td>
+    <td>
+      <input name="uname" [ngModel]="user1.username" required #uname="ngModel">
+      <div *ngIf="uname.invalid">Name Required.</div>
+    </td>
+  </tr>
+  <tr>
+    <td>Gender:</td>
+    <td>
+      <input type="radio" value="male" name="gender" ngModel required #gender="ngModel">Male
+      <input type="radio" value="formGroupName" name="gender" [ngModel]="user1.gender" required #gender="ngModel">Female
+      <div *ngIf="gender.invalid">
+      Gender Required!
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>Are you Married.</td>
+    <td>
+      <input type="checkbox" name="married" [ngModel]="user1.isMarried" >
+    </td>
+  </tr>
+  <tr>
+    <td>Accept T & C</td>
+    <td>
+      <input type="checkbox" name="tc" [ngModel]="user1.isTCAccepted" readonly #tc="ngModel">
+      <div *ngIf="tc.invalid">Accept T & C</div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+  <button>Submit</button> " "
+  <button type="button" (click)="setDefaultValues()">Set Default</button> " "
+  <button type="button" (click)="resetForm(userform)">Reset</button>
+
+    </td>
+  </tr>
+</table>
+</form> 

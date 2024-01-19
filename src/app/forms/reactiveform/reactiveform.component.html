@@ -1,0 +1,28 @@
+ <h1 style="text-align: center; font-weight: 900; margin-top: 20px;">Reactive Form</h1>
+   <div class="container">
+    <div class="row">
+      <div class="form-bg">
+        <form [formGroup]="signUpForm" (ngSubmit)="postData(signUpForm)">
+        <h2 class="text-center">Registration Page</h2><br>
+        <div class="form-group">
+          <input type="text" formControlName="fname" placeholder="First Name"  ><br>
+          <small style="color: red;" *ngIf="user && user.invalid && user.touched">First Name is required..</small>
+        </div><br>
+        <div class="form-group">
+          <input type="text" formControlName="lname" placeholder="Last Name">
+        </div><br>
+        <div class="form-group">
+          <input type="text" formControlName="emailid" placeholder="Email ID"  > <br>    
+          <small style="color: red;" *ngIf="email1 && email1.invalid && email1.touched">Email field is required.</small>
+        </div><br>
+        <div class="form-group">
+          <input type="password" formControlName="userpassword" placeholder="Your password" > <br>
+          <small style="color: red;" *ngIf="password1 && password1.invalid && password1.touched">Password is required.</small>
+        </div> <br>
+        <div class="align-center">
+          <button [disabled]="signUpForm.invalid">Post Data</button>
+        </div>
+        </form>
+      </div>
+    </div>
+   </div>
